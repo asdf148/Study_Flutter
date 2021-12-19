@@ -1,6 +1,6 @@
 
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:english_words/english_words.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RandomWords extends StatefulWidget {
@@ -29,11 +29,22 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildRow(WordPair pair) {
+    //단어를 저장할 필요는 없는데 한번 return 되면 다시 false되니까 의미가 없네, 우짜노
+    bool like = false;
+
     return ListTile(
       title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
+      trailing: Icon(
+        like ? Icons.favorite : Icons.favorite_border,
+        color: like ? Colors.red: null,
+      ), onTap: () {
+        setState(() {
+          like ? like = false : like = true;
+        });
+      },
     );
   }
 
@@ -48,7 +59,7 @@ class RandomWordsState extends State<RandomWords> {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Text('Go Back', textAlign: TextAlign.center,),
+        child: const Icon(Icons.arrow_back),
       ),
     );
   }

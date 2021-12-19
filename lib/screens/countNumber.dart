@@ -33,7 +33,7 @@ class _CountNumberState extends State<CountNumber> {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Text('Go Back', textAlign: TextAlign.center,),
+        child: const Icon(Icons.arrow_back),
       ),
     );
   }
