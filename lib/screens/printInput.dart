@@ -23,7 +23,11 @@ class PrintInputState extends State<PrintInput> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 100, bottom: 50),
+                padding: const EdgeInsets.only(top: 50),
+                child: Image.asset("Assets/urgent_cat.jpeg", width:250),  
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50, bottom: 50),
                 child: Text(
                   _input,
                   style: const TextStyle(color: Colors.cyan, fontSize: 20.5, ),
