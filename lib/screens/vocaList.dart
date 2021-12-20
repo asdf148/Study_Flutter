@@ -30,21 +30,22 @@ class RandomWordsState extends State<RandomWords> {
 
   Widget _buildRow(WordPair pair) {
     //단어를 저장할 필요는 없는데 한번 return 되면 다시 false되니까 의미가 없네, 우짜노
-    bool like = false;
+  bool isLike = false;
+
 
     return ListTile(
       title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      trailing: Icon(
-        like ? Icons.favorite : Icons.favorite_border,
-        color: like ? Colors.red: null,
-      ), onTap: () {
-        setState(() {
-          like ? like = false : like = true;
-        });
-      },
+      trailing: InkWell(
+        onTap: (){
+          setState(() {
+            isLike ? isLike = false : isLike = true;
+          });
+        },
+        child: isLike ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+      ),
     );
   }
 

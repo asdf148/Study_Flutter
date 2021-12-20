@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,6 +26,14 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/countNumber');
               },
               child: const Text('Go to Count Number'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/printInput');
+              },
+              child: const Text('Go to Print Input'),
             ),
           ),
         ],
